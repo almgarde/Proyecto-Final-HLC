@@ -1,0 +1,28 @@
+
+<app-cabecera [titulo]="'Login'" >
+  
+</app-cabecera>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block">Login</ion-button>
+        <a [routerLink]="['/contrasena-olvidada']" class="small-text">¿Olvidaste la contraseña?</a>
+        <a [routerLink]="['/registro']" class="small-text">¿Aún no estás registrado?</a>
+      </ion-col>
+    </ion-row>
+  </form> 
+
+
+</ion-content>

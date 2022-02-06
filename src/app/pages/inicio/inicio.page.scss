@@ -1,0 +1,39 @@
+
+ion-toolbar {
+    --background: url("/assets/images/cabecera-bg.png");
+    --color:black;
+    box-shadow: 0px 5px 5px rgb(100,100,100);
+}
+
+ion-content {
+    --background: rgb(250,241,185);
+    --background: linear-gradient(180deg, rgb(250,241,185) 0%, rgb(222,248,181) 100%)
+}
+
+ion-card-title {
+text-align: center;
+border: 10px;
+margin-bottom: 10px;
+text-decoration: underline;
+}
+
+ion-card-content p {
+    text-align: center;
+    margin-bottom: 10px;
+    border: linear-gradient(45deg, turquoise, greenyellow);
+}
+
+ion-card-content ion-button {
+    --border-color: black;
+    --color:black;
+    --background: rgb(219, 223, 223);
+    margin: auto;
+    display: block;
+}
+
+ion-title {
+    --color:black;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "Identidad de género",
+    "ruta": "/identidad-genero",
+    "icono": "trash",
+    "color": "primary",
+    "descripcion": "La identidad de género alude a la percepción subjetiva que un individuo tiene sobre sí mismo en cuanto a su propio género, que podría o no coincidir con sus características anatómicas sexuales.",
+    "imagen": "https://image.freepik.com/vector-gratis/concepto-identidad-genero_23-2148539311.jpg"
+  },
+  {
+    "nombre": "Violencia de género",
+    "ruta": "/violencia-genero",
+    "icono": "person-circle-outline",
+    "color": "danger",
+    "descripcion": "La violencia de género es un tipo de violencia física, psicológica, sexual e institucional, ejercida contra cualquier persona o grupo de personas sobre la base de su orientación sexual, identidad de género, sexo o género que impacta de manera negativa en su identidad y bienestar social, físico, psicológico o económico.",
+    "imagen": "https://www.ecestaticos.com/imagestatic/clipping/cac/b51/cacb5171a299a3dd9d18531a7b47703e/la-mejor-salida-para-escapar-de-la-violencia-de-genero.jpg?mtime=1622820035"
+  },
+  {
+    "nombre": "Bulling",
+    "ruta": "/bullying",
+    "icono": "bandage-outline",
+    "color": "warning",
+    "descripcion": "El acoso escolar es cualquier forma de maltrato psicológico, verbal o físico producido entre estudiantes de forma reiterada a lo largo de un tiempo determinado tanto en el aula, como a través de las redes sociales.",
+    "imagen": "https://statics-cuidateplus.marca.com/cms/styles/natural/azblob/bullying-colegio.jpg?itok=D9Pvzrfq"
+  },
+  {
+    "nombre": "Cyberbulling",
+    "ruta": "/cyber-bulling",
+    "icono": "add",
+    "color": "success",
+    "descripcion": "El ciberbullying es el uso de los medios telemáticos para ejercer el acoso psicológico entre iguales.",
+    "imagen": "https://imagenes.20minutos.es/files/article_amp/uploads/imagenes/2021/08/26/ciberbullying.png"
+  }
+]

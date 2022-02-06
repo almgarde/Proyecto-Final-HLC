@@ -1,0 +1,43 @@
+.LOG
+
+20:59 13/12/2021
+
+Primera toma de contacto y reparto de tareas.
+ - Juanjo y Alejandro: Montaje estructura básica.
+ - Alma: Diseño y CSS
+
+
+20:17 20/12/2021
+
+Juanjo, creacion de la estructura del proyecto.
+Implementacion del menu y las paginas de registro, acceso y recuperar contraseña.
+
+
+20:19 20/12/2021
+
+Alejandro, implantacion de las card con con acceso a paginas individuales. 
+
+
+20:20 20/12/2021
+
+Alma, retocado la estetica del proyecto, de las vistas de las card, del menu y de las paginas de registro, acceso y recuperar contraseña. 
+
+
+21:23 15/01/2022
+
+Alma: Ha realizado el desarrollo de la parte backend correspondiente los primeros 35 minutos del video.
+
+
+16:41 16/01/2022
+
+Alejandro: Ha editado la estética de la cabecera, el menú y el fondo de las páginas.
+20:25 17/01/2022
+Se comprueba mediante es uso de una app externa que el servidor funciona correctamente, se adjunta imagen.
+
+20:20 02/02/2022
+Juanjose: parte del servidor con base mongo realizado.
+
+20:45 06/02/2022
+
+21:25 06/02/2022
+Alma: Realizadas las partes servidor 3 y 4

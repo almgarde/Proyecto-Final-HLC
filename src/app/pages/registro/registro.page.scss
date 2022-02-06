@@ -1,0 +1,41 @@
+ion-button {
+    --border-color: rgb(200, 154, 200);
+    --border-width: 5px;
+    --border-style: outset;
+    --border-radius: 20px;
+
+    --color:black;
+    --background: rgb(219, 223, 223);
+    margin-bottom: 15px;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 45px;
+    display: auto;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+a {
+    font-size: 17px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+    display: block;
+}
+
+ion-item {
+    --background:rgb(250, 224, 250);
+    --color:black;
+
+    --border-color: rgb(200, 154, 200);
+    --border-width: 5px;
+    --border-style: outset;
+    --border-radius: 20px;
+    
+    margin: 15px;
+}
+
+ion-content {
+    --background: rgb(250,241,185);
+    --background: linear-gradient(180deg, rgb(250,241,185) 0%, rgb(222,248,181) 100%)
+}

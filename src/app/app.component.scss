@@ -1,0 +1,31 @@
+ion-toolbar {
+    --background: url("/assets/images/cabecera-bg.png");;
+    --color:black;
+}
+
+ion-title {
+    --color:black;
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ion-icon {
+    margin-right: 10px;
+    display: block;
+    color: black;
+}
+
+ion-item {
+    --background:rgb(250, 224, 250);
+    color: black;
+
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    --border-color: rgb(200, 154, 200);
+    --border-width: 5px;
+    --border-style: outset;
+    --border-radius: 20px;
+}
