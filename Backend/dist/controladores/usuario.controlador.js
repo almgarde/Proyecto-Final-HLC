@@ -26,7 +26,7 @@ class usuarioController {
     ;
     crearUsuario(req, res) {
         let u = new usuario_modelo_1.Usuario();
-        u.usuario = req.body.usuario;
+        u.usuario = req.body.nombre + ' ' + req.body.apellidos;
         let pwdNoCrypt = req.body.pwd;
         const hash = bcrypt_1.default.hashSync(pwdNoCrypt, 10);
         u.pwd = hash;
@@ -40,21 +40,16 @@ class usuarioController {
             else {
                 return res.status(200).json({
                     status: "ok",
-                    message: "El usuario creado es " + usuarioDB.usuario,
-                    usuario: {
-                        _id: usuarioDB._id,
-                        usuario: usuarioDB.usuario,
-                        email: usuarioDB.email
-                    }
+                    message: "El usuario creado es " + usuarioDB.usuario
                 });
             }
         });
     }
     login(req, res) {
         console.log(req.body);
-        let usuario = req.body.usuario;
+        let email = req.body.email;
         let pwd = req.body.pwd;
-        usuario_modelo_1.Usuario.findOne({ usuario: usuario }, null, null, (err, usuarioDB) => {
+        usuario_modelo_1.Usuario.findOne({ email: email }, null, null, (err, usuarioDB) => {
             if (err) {
                 throw err;
             }
@@ -87,5 +82,18 @@ class usuarioController {
         });
     }
     ;
+    renuevaToken(req, res) {
+        let usuarioToken = req.body.usuarioToken;
+        const usuarioQueMando = new usuario_modelo_1.Usuario();
+        usuarioQueMando._id = usuarioToken._id;
+        usuarioQueMando.usuario = usuarioToken.usuario;
+        usuarioQueMando.role = usuarioToken.role;
+        return res.status(200).json({
+            status: "ok",
+            message: "Token renovado",
+            _id: usuarioToken._id,
+            token: Token_1.Token.generaToken(usuarioQueMando)
+        });
+    }
 }
 exports.default = usuarioController;

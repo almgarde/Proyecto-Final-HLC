@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { IonicModule } from '@ionic/angular';
+import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 
 
 
@@ -12,7 +13,8 @@ import { IonicModule } from '@ionic/angular';
     IonicModule
   ],
   exports: [
-    CabeceraComponent
+    CabeceraComponent,
+
   ]
 })
 export class ComponentesModule { }

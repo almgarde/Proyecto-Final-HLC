@@ -1,0 +1,38 @@
+
+<app-cabecera [titulo]="'Login'" >
+  
+</app-cabecera>
+
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" name="email" type="text" required></ion-input>
+    </ion-item>
+    <div *ngFor="let error of validacionMensajes.email">
+      <ng-container *ngIf="email.hasError(error.type) && email.touched">
+          <small class="errorMensaje">{{error.message}}</small>
+      </ng-container>
+  </div>
+    
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="pwd" name="pwd" type="password" required></ion-input>
+    </ion-item>
+    <div *ngFor="let error of validacionMensajes.pwd">
+      <ng-container *ngIf="pwd.hasError(error.type) && pwd.touched">
+          <small class="errorMensaje">{{error.message}}</small>
+      </ng-container>
+  </div>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block">Login</ion-button>
+        <a [routerLink]="['/contrasena-olvidada']" class="small-text">¿Olvidaste la contraseña?</a>
+        <a [routerLink]="['/registro']" class="small-text">¿Aún no estás registrado?</a>
+      </ion-col>
+    </ion-row>
+  </form> 
+
+
+</ion-content>

@@ -1,0 +1,65 @@
+<app-cabecera [titulo]="'Regístrate'">
+
+</app-cabecera>
+
+<ion-content>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+  <ion-item lines="full">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input formControlName="nombre" name="nombre" type="text" required></ion-input>
+  </ion-item>
+  <div *ngFor="let error of validacionMensajes.nombre">
+    <ng-container *ngIf="nombre.hasError(error.type) && nombre.touched">
+      <small class="errorMensaje">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Apellidos</ion-label>
+    <ion-input formControlName="apellidos" name="apellidos" type="text" required></ion-input>
+  </ion-item>
+  <div *ngFor="let error of validacionMensajes.apellidos">
+    <ng-container *ngIf="apellidos.hasError(error.type) && apellidos.touched">
+      <small class="errorMensaje">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input formControlName="email" name="email" type="email" required></ion-input>
+  </ion-item>
+  <div *ngFor="let error of validacionMensajes.email">
+    <ng-container *ngIf="email.hasError(error.type) && email.touched">
+      <small class="errorMensaje">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input formControlName="pwd" name="password" type="password" required></ion-input>
+  </ion-item>
+  <div *ngFor="let error of validacionMensajes.pwd">
+    <ng-container *ngIf="pwd.hasError(error.type) && pwd.touched">
+      <small class="errorMensaje">{{error.message}}</small>
+    </ng-container>
+  </div>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Repita la contraseña</ion-label>
+    
+    <ion-input formControlName="pwd2" name="pwd2" type="password" required></ion-input>
+
+  </ion-item>
+  <div *ngFor="let error of validacionMensajes.pwd2">
+    <ng-container *ngIf="pwd2.hasError(error.type) && pwd2.touched">
+      <small class="errorMensaje">{{error.message}}</small>
+    </ng-container>
+  </div>
+  <!-- <small *ngIf="this.registerForm?.errors?.mismatch">Las contraseñas no coinciden</small> -->
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" expand="block" >Registrarse</ion-button>
+    </ion-col>
+  </ion-row>
+</form>
+</ion-content>

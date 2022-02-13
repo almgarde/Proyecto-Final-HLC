@@ -4,7 +4,7 @@ export interface IUsuario extends Document {
 
     usuario: string,
     pwd: string,
-    role: string[],
-    email: string
+    email: string,
+    role: string[]   
 
 }
