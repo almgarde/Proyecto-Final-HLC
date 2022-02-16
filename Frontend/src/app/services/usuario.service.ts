@@ -33,6 +33,7 @@ export class UsuarioService {
       });
     });
   }
+  
   async guardaToken(token: string) {
     await Storage.set({
       key: 'token',

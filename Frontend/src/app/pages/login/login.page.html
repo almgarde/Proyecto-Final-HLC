@@ -1,6 +1,5 @@
+<app-cabecera [titulo]="'Login'">
 
-<app-cabecera [titulo]="'Login'" >
-  
 </app-cabecera>
 
 <ion-content>
@@ -11,19 +10,21 @@
     </ion-item>
     <div *ngFor="let error of validacionMensajes.email">
       <ng-container *ngIf="email.hasError(error.type) && email.touched">
-          <small class="errorMensaje">{{error.message}}</small>
+        <small class="errorMensaje">{{error.message}}</small>
       </ng-container>
-  </div>
-    
+    </div>
+
     <ion-item lines="full">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input formControlName="pwd" name="pwd" type="password" required></ion-input>
+      <app-show-hide-password>
+        <ion-input formControlName="pwd" name="pwd" type="password" required></ion-input>
+      </app-show-hide-password>
     </ion-item>
     <div *ngFor="let error of validacionMensajes.pwd">
       <ng-container *ngIf="pwd.hasError(error.type) && pwd.touched">
-          <small class="errorMensaje">{{error.message}}</small>
+        <small class="errorMensaje">{{error.message}}</small>
       </ng-container>
-  </div>
+    </div>
 
     <ion-row>
       <ion-col>
@@ -32,7 +33,7 @@
         <a [routerLink]="['/registro']" class="small-text">¿Aún no estás registrado?</a>
       </ion-col>
     </ion-row>
-  </form> 
+  </form>
 
 
 </ion-content>

@@ -7,23 +7,6 @@ const usuario_modelo_1 = require("../modelos/usuario.modelo");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const Token_1 = require("../clases/Token");
 class usuarioController {
-    getDatos(req, res) {
-        console.log(req.query);
-        let usuario = req.query.usuario;
-        if (usuario) {
-            return res.status(200).json({
-                status: "ok",
-                message: "el objeto es " + usuario
-            });
-        }
-        else {
-            return res.status(500).json({
-                status: "fail",
-                message: "no hay usuario"
-            });
-        }
-    }
-    ;
     crearUsuario(req, res) {
         let u = new usuario_modelo_1.Usuario();
         u.usuario = req.body.nombre + ' ' + req.body.apellidos;

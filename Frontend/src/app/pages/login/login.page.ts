@@ -23,8 +23,6 @@ export class LoginPage implements OnInit {
     const respuesta = await this._usuarioService.login(datosUsuario);
 
     if (respuesta.status=='ok') {
-      //this._router.navigate(['login']);
-
       console.log('Usuario logado');
     } else {
       console.log(respuesta.message);

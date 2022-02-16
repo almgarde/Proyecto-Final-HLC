@@ -7,14 +7,14 @@ import { ShowHidePasswordComponent } from './show-hide-password/show-hide-passwo
 
 
 @NgModule({
-  declarations: [CabeceraComponent],
+  declarations: [CabeceraComponent, ShowHidePasswordComponent],
   imports: [
     CommonModule,
     IonicModule
   ],
   exports: [
     CabeceraComponent,
-
+ShowHidePasswordComponent
   ]
 })
 export class ComponentesModule { }

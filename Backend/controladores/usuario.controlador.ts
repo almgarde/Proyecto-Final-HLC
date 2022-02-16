@@ -4,26 +4,8 @@ import bcrypt from 'bcrypt';
 import { Token } from "../clases/Token";
 
 class usuarioController {
-    getDatos(req: Request, res: Response) {
 
-        console.log(req.query);
-        let usuario = req.query.usuario;
-        if (usuario) {
-            return res.status(200).json({
-                status: "ok",
-                message: "el objeto es " + usuario
-            });
-
-        } else {
-            return res.status(500).json({
-                status: "fail",
-                message: "no hay usuario"
-            });
-
-        }
-
-    };
-
+    
     crearUsuario(req: Request, res: Response) {
 
         let u = new Usuario();

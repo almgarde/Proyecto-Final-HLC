@@ -9,7 +9,7 @@ export const compruebaToken = (req: any, res: any, next: NextFunction) => {
     let userToken = '';
 
     if (token) {
-        userToken = token.split("Bearer")[1];
+        userToken = token.split('Bearer')[1];
         Token.compareToken(userToken).then(async decoded => {
             const idUsuario = decoded.usuario._id;
             const encontrado = await Usuario.findById(idUsuario)

@@ -16,7 +16,7 @@ const compruebaToken = (req, res, next) => {
     let token = req.get('Authoritation');
     let userToken = '';
     if (token) {
-        userToken = token.split("Bearer")[1];
+        userToken = token.split('Bearer')[1];
         Token_1.Token.compareToken(userToken).then((decoded) => __awaiter(void 0, void 0, void 0, function* () {
             const idUsuario = decoded.usuario._id;
             const encontrado = yield usuario_modelo_1.Usuario.findById(idUsuario);

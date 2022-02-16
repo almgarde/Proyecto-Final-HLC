@@ -8,17 +8,18 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-  constructor(private _usuaruiService: UsuarioService) { }
+  constructor(private _usuarioService: UsuarioService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (this._usuaruiService.tokenAlmacenado != '') {
+    if (this._usuarioService.tokenAlmacenado != '') {
       let reqClonada = req.clone({
         setHeaders: {
-          Authoritation: 'Bearer ' + this._usuaruiService.tokenAlmacenado
+          Authoritation: 'Bearer ' + this._usuarioService.tokenAlmacenado
         }
       });
       return next.handle(reqClonada);
+    } else {
+      return next.handle(req);
     }
-    return next.handle(req);
   }
 }
