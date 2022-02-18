@@ -49,7 +49,7 @@ export class RegistroPage implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       pwd: ['', [Validators.required, Validators.minLength(8)]],
       pwd2: ['', [Validators.required, Validators.minLength(8)]]
-    } // , pwdMatchValidator(this.registerForm)
+    }  , pwdMatchValidator
     )
   }
 
@@ -93,6 +93,8 @@ export class RegistroPage implements OnInit {
 }
 
 function pwdMatchValidator(g: FormGroup) {
+  console.log('1',g.get('pwd'))
+  console.log('2',g.get('pwd2'))
   return g.get('pwd').value === g.get('pwd2').value
     ? false : { mismatch: true };
 }

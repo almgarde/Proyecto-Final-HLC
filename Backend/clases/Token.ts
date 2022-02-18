@@ -17,9 +17,11 @@ export class Token {
     }
 
     static compareToken(token: string) {
+        console.log(this.claveSecreta, token);
         return new Promise<any>((resolve, reject) => {
             jwt.verify(token, this.claveSecreta, (err, decoded) => {
                 if (err) {
+                    console.log(err.message);
                     reject('Token inválido');
                 } else {
                     resolve(decoded);

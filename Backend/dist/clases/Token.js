@@ -17,9 +17,11 @@ class Token {
         });
     }
     static compareToken(token) {
+        console.log(this.claveSecreta, token);
         return new Promise((resolve, reject) => {
             jsonwebtoken_1.default.verify(token, this.claveSecreta, (err, decoded) => {
                 if (err) {
+                    console.log(err.message);
                     reject('Token inválido');
                 }
                 else {

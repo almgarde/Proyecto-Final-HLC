@@ -13,13 +13,15 @@ exports.compruebaToken = void 0;
 const Token_1 = require("../clases/Token");
 const usuario_modelo_1 = require("../modelos/usuario.modelo");
 const compruebaToken = (req, res, next) => {
-    let token = req.get('Authoritation');
+    let token = req.get('Authorization');
     let userToken = '';
     if (token) {
-        userToken = token.split('Bearer')[1];
+        userToken = token.split('Bearer ')[1];
+        console.log('hola' + userToken, 'userToken');
         Token_1.Token.compareToken(userToken).then((decoded) => __awaiter(void 0, void 0, void 0, function* () {
             const idUsuario = decoded.usuario._id;
             const encontrado = yield usuario_modelo_1.Usuario.findById(idUsuario);
+            console.log(idUsuario, encontrado);
             if (encontrado) {
                 req.body.usuarioToken = encontrado;
             }
@@ -31,6 +33,7 @@ const compruebaToken = (req, res, next) => {
             }
             next();
         })).catch(err => {
+            console.log('err', err);
             res.status(200).json({
                 status: 'fail',
                 message: 'Token inválido'

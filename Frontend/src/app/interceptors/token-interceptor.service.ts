@@ -14,7 +14,7 @@ export class TokenInterceptorService implements HttpInterceptor {
     if (this._usuarioService.tokenAlmacenado != '') {
       let reqClonada = req.clone({
         setHeaders: {
-          Authoritation: 'Bearer ' + this._usuarioService.tokenAlmacenado
+          Authorization: 'Bearer ' + this._usuarioService.tokenAlmacenado
         }
       });
       return next.handle(reqClonada);

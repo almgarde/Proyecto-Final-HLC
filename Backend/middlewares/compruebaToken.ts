@@ -4,15 +4,17 @@ import { Usuario } from '../modelos/usuario.modelo';
 
 export const compruebaToken = (req: any, res: any, next: NextFunction) => {
 
-    let token = req.get('Authoritation');
+    let token = req.get('Authorization');
 
     let userToken = '';
 
     if (token) {
-        userToken = token.split('Bearer')[1];
+        userToken = token.split('Bearer ')[1];
+        console.log('hola'+userToken,'userToken')
         Token.compareToken(userToken).then(async decoded => {
             const idUsuario = decoded.usuario._id;
-            const encontrado = await Usuario.findById(idUsuario)
+            const encontrado = await Usuario.findById(idUsuario);
+            console.log(idUsuario, encontrado);
             if (encontrado) {
                 req.body.usuarioToken = encontrado;
             } else {
@@ -24,6 +26,8 @@ export const compruebaToken = (req: any, res: any, next: NextFunction) => {
             next();
 
         }).catch(err => {
+            console.log('err',err);
+
             res.status(200).json({
                 status: 'fail',
                 message: 'Token inválido'
